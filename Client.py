@@ -88,7 +88,29 @@ class Client:
         self.pause.grid(row=1, column=2, padx=2, pady=2)
 
         # Create Teardown button
-        
+        self.teardown = Button(self.master, width=20, padx=3, pady=3)
+        self.teardown["text"] = "Teardown"
+        self.teardown["command"] = self.exitClient
+        self.teardown.grid(row=1, column=3, padx=2, pady=2)
+
+        # Create a label to display the movie
+        self.label = Label(self.master, height=19)
+        self.label.grid(row=0, column=0, columnspan=4, sticky=W + E + N + S, padx=5, pady=5)
+
+        self.label1 = Label(self.master, text="Total byte received: ")
+        self.label1.grid(row=2, column=1, padx=2, pady=2, sticky=E)
+        self.labelTotalByte = Label(self.master)
+        self.labelTotalByte.grid(row=2, column=2, padx=2, pady=2, sticky=E)
+
+        self.label2 = Label(self.master, text="Packet lost rate: ")
+        self.label2.grid(row=3, column=1, padx=2, pady=2, sticky=E)
+        self.labelLostRate = Label(self.master)
+        self.labelLostRate.grid(row=3, column=2, padx=2, pady=2, sticky=E)
+
+        self.label3 = Label(self.master, text="Data rate: ")
+        self.label3.grid(row=4, column=1, padx=2, pady=2, sticky=E)
+        self.labelData = Label(self.master)
+        self.labelData.grid(row=4, column=2, padx=2, pady=2, sticky=E)
 
     def setupMovie(self):
         """Setup button handler."""
